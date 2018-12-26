@@ -21,21 +21,12 @@
     "baseUrl": ".",
     "module": "es6",
     "paths": {
-      "jikan/tests/*": [
-        "tests/*"
-      ],
-      "jikan/*": [
-        "app/*"
-      ],
-      "*": [
-        "types/*"
-      ]
+      "jikan/tests/*": ["tests/*"],
+      "jikan/*": ["app/*"],
+      "*": ["types/*"],
+      "ember-paper/utils/palettes": ["./node_modules/ember-paper"]
     },
     "experimentalDecorators": true
   },
-  "include": [
-    "app/**/*",
-    "tests/**/*",
-    "types/**/*"
-  ]
+  "include": ["app/**/*", "tests/**/*", "types/**/*"]
 }
