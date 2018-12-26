@@ -1,0 +1,121 @@
+$custom-colour: (
+  '50': #16171c,
+  '100': #202126,
+  '200': #2a2b30,
+  '300': #35363b,
+  '400': #3f4045,
+  '500': #1a253d,
+  '600': #535459,
+  '700': #5d5e63,
+  '800': #68696e,
+  '900': #9e9ea0,
+  'A100': #16171c,
+  'A200': #242f47,
+  'A400': #2e3951,
+  'A700': #39445c,
+  'contrastDefaultColor': #2e3951,
+  'contrastDarkColors': (
+    '50',
+    '100',
+    '200',
+    'A100'
+  ),
+  'contrastStrongLightColors': (
+    '500',
+    '600',
+    'A200',
+    'A400',
+    'A700'
+  )
+);
+
+$bg-color: black;
+$accent-color: #5e9fbe;
+$header-color: #1a253d;
+$primary: $custom-colour;
+$background: $custom-colour;
+$foreground: 'foreground-light';
+
+@import 'ember-paper';
+@import 'variables';
+@import 'pod-styles';
+
+body {
+  background-color: $bg-color;
+  color: paper-var(--primary-900);
+  // font-size: 14px;
+
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  .main {
+    height: calc(100vh - #{$mainToolbarHeight});
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+// :root {
+//   --background-50: 0, 0, 0 !important;
+//   --background-50-contrast: 0, 0, 0;
+//   --background-100: 0, 0, 0;
+//   --background-100-contrast: 0, 0, 0;
+//   --background-200: 0, 0, 0;
+//   --background-200-contrast: 0, 0, 0;
+//   --background-300: 144, 164, 174;
+//   --background-300-contrast: 0, 0, 0;
+//   --background-400: 120, 144, 156;
+//   --background-400-contrast: 255, 255, 255;
+//   --background-500: 96, 125, 139;
+//   --background-500-contrast: 255, 255, 255;
+//   --background-600: 84, 110, 122;
+//   --background-600-contrast: 255, 255, 255;
+//   --background-700: 69, 90, 100;
+//   --background-700-contrast: 255, 255, 255;
+//   --background-800: 55, 71, 79;
+//   --background-800-contrast: 255, 255, 255;
+//   --background-900: 38, 50, 56;
+//   --background-900-contrast: 255, 255, 255;
+// --background-A100: #262e3e;
+//   --background-A100-contrast: 0, 0, 0;
+//   --background-A200: 176, 190, 197;
+//   --background-A200-contrast: 0, 0, 0;
+//   --background-A400: 120, 144, 156;
+//   --background-A400-contrast: 255, 255, 255;
+//   --background-A700: 69, 90, 100;
+//   --background-A700-contrast: 255, 255, 255;
+// }
+
+// $custom-colour: (
+//   '50': #16171c,
+//   '100': #202126,
+//   '200': #2a2b30,
+//   '300': #35363b,
+//   '400': #3f4045,
+//   '500': #494a4f,
+//   '600': #535459,
+//   '700': #5d5e63,
+//   '800': #68696e,
+//   '900': #727378,
+//   'A100': #1a253d,
+//   'A200': #242f47,
+//   'A400': #2e3951,
+//   'A700': #39445c,
+//   'contrastDefaultColor': #2e3951,
+//   'contrastDarkColors': (
+//     '50',
+//     '100',
+//     '200',
+//     'A100'
+//   ),
+//   'contrastStrongLightColors': (
+//     '500',
+//     '600',
+//     'A200',
+//     'A400',
+//     'A700'
+//   )
+// );

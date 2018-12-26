@@ -1,0 +1,31 @@
+{{#paper-sidenav-container class="inner-sidenav tracker-base"  }}
+  {{#paper-sidenav
+    class="md-whiteframe-z2"
+    name="left2"
+    open=leftSideBarOpen2
+    lockedOpen=leftSideBarLockedOpen
+    onToggle=(action (mut leftSideBarOpen2))}}
+    {{#paper-toolbar as |toolbar|}}
+      {{#paper-toolbar-tools}}Sidenav{{/paper-toolbar-tools}}
+    {{/paper-toolbar}}
+    {{#paper-content padding=true}}
+    {{/paper-content}}
+  {{/paper-sidenav}}
+  {{#paper-card-content class="flex layout-column"}}
+    <div class='list layout-column'>
+      {{#paper-button onClick=(action 'newDay')}}
+        {{fa-icon 'plus-square'}} New
+      {{/paper-button}}
+      <ul>
+        {{#each model as |trackedDay|}}
+          <li {{action 'transitionTo' trackedDay.date}}>
+            {{moment-format trackedDay.date 'MM/DD ddd'}}
+          </li>
+        {{/each}}
+      </ul>
+    </div>
+    <div class='details'>
+      {{outlet}}
+    </div>
+  {{/paper-card-content}}
+{{/paper-sidenav-container}}

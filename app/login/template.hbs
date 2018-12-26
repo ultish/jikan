@@ -1,0 +1,9 @@
+{{#paper-form onSubmit=(action "basicSubmitAction") as |form|}}
+  {{form.input
+    label="Login" 
+    value=userName 
+    onChange=(action (mut userName)) 
+    required=true
+  }}
+{{/paper-form}}
+{{outlet}}

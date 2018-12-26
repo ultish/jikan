@@ -1,0 +1,43 @@
+{{!-- {{#paper-sidenav-container class=(concat "inner-sidenav " routeStyleNamespaceClassSet) }}
+  {{#paper-sidenav
+    class="md-whiteframe-z2"
+    name="left2"
+    open=leftSideBarOpen2
+    lockedOpen=leftSideBarLockedOpen
+    onToggle=(action (mut leftSideBarOpen2))}}
+    {{#paper-toolbar as |toolbar|}}
+      {{#paper-toolbar-tools}}Left Sidenav{{/paper-toolbar-tools}}
+    {{/paper-toolbar}}
+    {{#paper-content padding=true}}
+      Çup?
+    {{/paper-content}}
+  {{/paper-sidenav}}
+  {{#paper-card-content class="flex"}}
+    <div class="layout-fill layout-align-start-center layout-column">
+      <p>
+        Another way of using the sidenav is to toggle the <code>lockedOpen</code> state.
+        This corresponds to the "persistent sidenav" pattern in the material spec.
+      </p>
+      <p>
+        Left sidenav is <strong>{{if leftSideBarLockedOpen "locked" "unlocked"}}</strong>.
+      </p>
+      {{#paper-button raised=true onClick=(action "toggle" "leftSideBarLockedOpen")}}
+        {{if leftSideBarLockedOpen "Unlock" "Lock"}} left sidenav
+      {{/paper-button}}
+    </div>
+  {{/paper-card-content}}
+{{/paper-sidenav-container}} --}}
+<div class="main-toolbar">
+  {{#paper-button onClick=(action "darkTheme")}}
+    Dark
+  {{/paper-button}}
+  {{#paper-button onClick=(action "lightTheme")}}
+    Light
+  {{/paper-button}}
+  {{#paper-button onClick=(action "deleteAllDays")}}
+    Delete Days
+  {{/paper-button}}
+</div>
+<div class={{concat "main " routeStyleNamespaceClassSet}}>
+  {{outlet}}
+</div>

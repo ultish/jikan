@@ -1,0 +1,27 @@
+Details {{model.trackedDay.date}}
+{{#paper-autocomplete
+  onCreate=(action "addTask")
+  options=model.tasks
+  allowClear=true
+  defaultHighlighted=true
+  searchText=(readonly searchText)
+  onSearchTextChange=(action (mut searchText))
+  selected=selectedTask
+  search=null
+  searchField="name"
+  labelPath="name"
+  placeholder="Select a Task..."
+  loadingMessage="Searching Tasks..."
+  noMatchesMessage="Can't find Task, create it?"
+  onSelectionChange=(action (mut selectedTask)) as |task autocomplete|}}
+  {{paper-autocomplete-highlight
+    label=task.name
+    searchText=autocomplete.searchText
+    flags="i"
+  }}
+{{/paper-autocomplete}}
+Tasks: {{trackedTask.length}}<br>
+{{#each model.trackedTasks as |trackedTask|}}
+  Task: {{trackedTask.task.name}}
+{{/each}}
+{{outlet}}

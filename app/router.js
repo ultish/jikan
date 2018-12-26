@@ -7,6 +7,10 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
+  this.route('tracker', function() {
+    this.route('details', { path: ':date' });
+  });
+  this.route('login');
 });
 
 export default Router;
