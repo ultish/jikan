@@ -23,8 +23,6 @@ export default class Application extends Controller {
     this.db = db;
     this.preferences = storageFor('preferences');
 
-    const paperTheme = this.paperTheme;
-    console.log(PALETTES);
     /*
     ember-paper/addon/utils/palettes.js contains all the palettes
     https://github.com/miguelcobain/ember-paper/blob/master/addon/utils/generate-palette.js generate the palettes
@@ -46,8 +44,6 @@ export default class Application extends Controller {
 
 
     */
-
-    debugger;
   }
 
   @action
@@ -83,12 +79,13 @@ export default class Application extends Controller {
     this.toggleProperty('leftSideBarLockedOpen');
   }
 
-  @action
-  async deleteAllDays() {
-    const days = await this.store.findAll('trackedday');
-    const promises = days.map(day => day.destroyRecord());
-    await Promise.all(promises);
-  }
+  // This breaks the ember build...you'll get stuck in compile forever
+  // @action
+  // async deleteAllDays() {
+  //   const days = await this.store.findAll('trackedday');
+  //   const promises = days.map(day => day.destroyRecord());
+  //   await Promise.all(promises);
+  // }
 }
 
 // DO NOT DELETE: this is how TypeScript knows how to look up your controllers.
@@ -97,25 +94,3 @@ declare module '@ember/controller' {
     application: Application;
   }
 }
-
-/*
-
-      background: {
-        50: "rgb(232, 245, 233)"
-        100: "rgb(200, 230, 201)"
-        200: "rgb(165, 214, 167)"
-        300: "rgb(129, 199, 132)"
-        400: "rgb(102, 187, 106)"
-        500: "rgb(76, 175, 80)"
-        600: "rgb(67, 160, 71)"
-        700: "rgb(56, 142, 60)"
-        800: "rgb(46, 125, 50)"
-        900: "rgb(27, 94, 32)"
-        A100: "rgb(185, 246, 202)"
-        A200: "rgb(105, 240, 174)"
-        A400: "rgb(0, 230, 118)"
-        A700: "rgb(0, 200, 83)"
-        contrastDefaultColor: "rgba(0, 0, 0, 0.87)"
-        contrastLightColors: (5) ["500", "600", "700", "800", "900"]
-        contrastStrongLightColors: (3) ["500", "600", "700"]
-      }*/

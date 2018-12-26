@@ -13,10 +13,6 @@ export default class TrackerDetails extends Controller {
     });
     newTask = await newTask.save();
 
-    const trackedDay = this.model.trackedDay;
-
-    debugger;
-
     const trackedTask = this.store.createRecord('trackedtask', {
       task: newTask,
       trackedDay: this.model.trackedDay

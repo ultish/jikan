@@ -14,8 +14,8 @@ export default class Trackedtask extends Model {
   @belongsTo('task')
   task!: Task;
 
-  // @belongsTo('trackedday')
-  // trackedDay!: Trackedday;
+  @belongsTo('trackedday')
+  trackedDay!: Trackedday;
 }
 
 // DO NOT DELETE: this is how TypeScript knows how to look up your models.

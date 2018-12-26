@@ -7,8 +7,8 @@ export default class Trackedday extends Model {
   @attr('string')
   rev!: string;
 
-  // @attr('number')
-  // date!: number;
+  @attr('number')
+  date!: number;
 
   @hasMany('trackedtask')
   trackedTasks!: TrackedTask[];
