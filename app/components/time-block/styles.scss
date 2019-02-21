@@ -1,0 +1,13 @@
+& {
+  display: inline-block;
+  width: 15px;
+  height: 20px;
+  background-color: paper-var(--background-300);
+  user-select: none;
+  // float: left;
+  // clear: none;
+
+  &.highlight {
+    background-color: white;
+  }
+}

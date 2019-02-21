@@ -1,27 +1,39 @@
-Details {{model.trackedDay.date}}
-{{#paper-autocomplete
-  onCreate=(action "addTask")
-  options=model.tasks
-  allowClear=true
-  defaultHighlighted=true
-  searchText=(readonly searchText)
-  onSearchTextChange=(action (mut searchText))
-  selected=selectedTask
-  search=null
-  searchField="name"
-  labelPath="name"
-  placeholder="Select a Task..."
-  loadingMessage="Searching Tasks..."
-  noMatchesMessage="Can't find Task, create it?"
-  onSelectionChange=(action (mut selectedTask)) as |task autocomplete|}}
-  {{paper-autocomplete-highlight
-    label=task.name
-    searchText=autocomplete.searchText
-    flags="i"
-  }}
-{{/paper-autocomplete}}
-Tasks: {{trackedTask.length}}<br>
-{{#each model.trackedTasks as |trackedTask|}}
-  Task: {{trackedTask.task.name}}
-{{/each}}
+<div class='base'>
+  <div class='tracked-task-names'>
+    {{#each model.trackedTasks as |trackedTask|}}
+      <div class='trackedName'>{{trackedTask.task.name}}</div>
+    {{/each}}
+    {{#paper-autocomplete
+      class='newTask'
+      onCreate=(action "addTask")
+      options=model.tasks
+      allowClear=true
+      defaultHighlighted=true
+      searchText=(readonly searchText)
+      onSearchTextChange=(action (mut searchText))
+      selected=selectedTask
+      search=null
+      searchField="name"
+      labelPath="name"
+      placeholder="Select a Task..."
+      loadingMessage="Searching Tasks..."
+      noMatchesMessage="Can't find Task, create it?"
+      onSelectionChange=(action (mut selectedTask)) as |task autocomplete|}}
+      {{paper-autocomplete-highlight
+        label=task.name
+        searchText=autocomplete.searchText
+        flags="i"
+      }}
+    {{/paper-autocomplete}}
+  </div>
+  <div class='tracked-tasks'>
+    {{!-- <table> --}}
+    {{#each model.trackedTasks as |trackedTask|}}
+      {{#tracked-task }}
+        {{!-- {{trackedTask.task.name}} --}}
+      {{/tracked-task}}
+    {{/each}}
+    {{!-- </table> --}}
+  </div>
+</div>
 {{outlet}}

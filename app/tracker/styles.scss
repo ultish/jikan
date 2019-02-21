@@ -5,6 +5,22 @@
   left: 0;
   right: 0;
 
+  .base {
+    position: relative;
+    .tracked-task-names {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 250px;
+      bottom: 0;
+    }
+    .tracked-tasks {
+      position: absolute;
+      left: 250px;
+      top: 0;
+    }
+  }
+
   .tracker-base {
     height: 100%;
   }
@@ -26,23 +42,24 @@
     left: $sidebarWidth;
     bottom: 0;
     right: 0;
+    padding: 10px;
   }
 
-  ul {
-    padding: 0;
-    margin: 0;
-    li {
-      text-align: center;
-      text-transform: uppercase;
-      background-color: paper-var(--background-50);
-      list-style: none;
-      width: 100%;
-      height: 30px;
-      line-height: 30px;
-      cursor: pointer;
-      &:hover {
-        background-color: paper-var(--background-200);
-      }
-    }
-  }
+  // ul {
+  //   padding: 0;
+  //   margin: 0;
+  //   li {
+  //     text-align: center;
+  //     text-transform: uppercase;
+  //     background-color: paper-var(--background-50);
+  //     list-style: none;
+  //     width: 100%;
+  //     height: 30px;
+  //     line-height: 30px;
+  //     cursor: pointer;
+  //     &:hover {
+  //       background-color: paper-var(--background-200);
+  //     }
+  //   }
+  // }
 }

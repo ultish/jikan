@@ -1,0 +1,22 @@
+& {
+  .newTask {
+    width: 250px;
+  }
+
+  .blocks {
+    white-space: nowrap;
+
+    .hour-block {
+      // border: 1px solid white;
+      display: inline-block;
+      // float: left;
+      // .block {
+      //   display: inline-block;
+      //   width: 15px;
+      //   height: 20px;
+      //   // border-right: 1px solid grey;
+      //   background-color: paper-var(--background-300);
+      // }
+    }
+  }
+}
